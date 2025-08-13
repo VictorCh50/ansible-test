@@ -1,0 +1,19 @@
+---
+- hosts: all    # Space after "hosts:"
+  become: true  # Correct indentation (2 spaces)
+  tasks:
+
+    - name: update repository index
+      apt:
+        update_cache: yes
+
+    - name: Install apache2 package
+      apt:      # Align with "name" above
+        name: apache2  # Space after "name:"
+        state: latest  
+
+    - name: add php support for apache
+      apt:
+        name: libapache2-mod-php
+        state: latest     
+        
